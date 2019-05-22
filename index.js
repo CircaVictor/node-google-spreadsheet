@@ -412,7 +412,7 @@ var SpreadsheetWorksheet = function( spreadsheet, data ){
     self.resize({rowCount: 1, colCount: 1}, function(err) {
       if (err) return cb(err);
       self.getCells(function(err, cells) {
-        if (cells[0]) {
+        if (cells && cells[0]) {
           cells[0].setValue(null, function(err) {
             if (err) return cb(err);
             self.resize({rowCount: rows, colCount: cols}, cb);
